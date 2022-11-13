@@ -1,10 +1,20 @@
+import { useState } from "react";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme, StyledNav } from "./styles";
 
 const Navbar = () => {
+    const [theme, setTheme] = useState("light");
+
+    const changeTheme = () => {
+        theme === "light" ? setTheme("dark") : setTheme("light");
+    }
     return (
-        <nav>
-            <h1>Where in the world?</h1>
-            <button>Dark Mode</button>
-        </nav>
+        <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
+            <StyledNav>
+                <h1>Where in the world?</h1>
+                <button onClick={changeTheme}>Dark Mode</button>
+            </StyledNav>
+        </ThemeProvider>
     )
 }
 
