@@ -20,6 +20,19 @@ useEffect(() => {
 }, [])
   return (
     <main>
+      <div className="d-flex align-items-center sort-data">
+        <input type="text" placeholder="Search for a country..." />
+        <div className="dropdown">
+          <p>Filter by Region</p>
+          <ul className="d-none list-unstyled dropdown-options">
+            <li>Africa</li>
+            <li>America</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
+        </div>
+      </div>
       <div className="row row-cols-lg-4 g-3 g-lg-5">
         {
           countries.map((country) => {
