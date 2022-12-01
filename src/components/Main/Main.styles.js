@@ -27,5 +27,9 @@ const Searchbar = styled.div`
         }
     }
 `
+const Dropdown = styled(Searchbar)`
+    color: ${({theme}) => theme.text};
+    position: relative;
+`
 
-export { StyledMain, Searchbar }
+export { StyledMain, Searchbar, Dropdown }

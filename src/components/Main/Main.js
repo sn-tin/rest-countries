@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import CountriesCard from "./CountriesCard";
-import { StyledMain, Searchbar } from "./Main.styles"
+import { StyledMain, Searchbar, Dropdown } from "./Main.styles"
 
 const Main = () => {
   const [countries, setCountries] = useState([])
@@ -31,8 +31,11 @@ const formatNumber = (value) => {
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search for a country..." />
         </Searchbar>
-        <div className="dropdown">
-          <p>Filter by Region</p>
+        <Dropdown className="dropdown">
+          <div className="d-flex align-items-center justify-content-between">
+            <p>Filter by Region</p>
+            <i class="fa-solid fa-chevron-down fa-xs"></i>
+          </div>
           <ul className="d-none list-unstyled dropdown-options">
             <li>Africa</li>
             <li>America</li>
@@ -40,7 +43,7 @@ const formatNumber = (value) => {
             <li>Europe</li>
             <li>Oceania</li>
           </ul>
-        </div>
+        </Dropdown>
       </div>
       <div className="row row-cols-lg-4 g-3 g-lg-5">
         {
