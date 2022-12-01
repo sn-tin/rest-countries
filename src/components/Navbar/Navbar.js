@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme, StyledNav } from "../styles";
+import { darkTheme, lightTheme, StyledNav } from "../../styles";
 
 const Navbar = () => {
     const [theme, setTheme] = useState("light");
