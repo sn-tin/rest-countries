@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme, StyledNav } from "../../styles";
+import { darkTheme, lightTheme } from "../../styles";
+import { StyledNav, ModeButton } from "./Navbar.style";
 
 const Navbar = () => {
     const [theme, setTheme] = useState("light");
@@ -12,7 +13,7 @@ const Navbar = () => {
         <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
             <StyledNav>
                 <h1>Where in the world?</h1>
-                <button onClick={changeTheme}>Dark Mode</button>
+                <ModeButton onClick={changeTheme}>Dark Mode</ModeButton>
             </StyledNav>
         </ThemeProvider>
     )
