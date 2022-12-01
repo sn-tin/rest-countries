@@ -17,7 +17,7 @@ const Searchbar = styled.div`
         color: ${({theme}) => theme.text};
         border: none;
         background-color: ${({theme}) => theme.secondary};
-        margin-left: 30px;
+        padding: 0 30px;
         &::placeholder {
             color: ${({theme}) => theme.text};
             font-size: clamp(0.9rem, 2.5vw, 1rem);
