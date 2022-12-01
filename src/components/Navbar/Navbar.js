@@ -13,7 +13,8 @@ const Navbar = () => {
         <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
             <StyledNav>
                 <h1>Where in the world?</h1>
-                <ModeButton onClick={changeTheme}>Dark Mode</ModeButton>
+                <ModeButton onClick={changeTheme}>
+                <i class="fa-solid fa-moon"></i> Dark Mode</ModeButton>
             </StyledNav>
         </ThemeProvider>
     )
