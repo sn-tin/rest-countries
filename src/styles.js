@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const lightTheme = {
     primary: "hsl(0, 0%, 100%)",
@@ -39,10 +39,4 @@ const GlobalStyles = createGlobalStyle`
     }
 `
 
-const StyledNav = styled.nav`
-    display: flex;
-    justify-content: space-between;
-    background-color: ${({theme}) => theme.primary};
-`
-
-export { GlobalStyles, lightTheme, darkTheme, StyledNav }
+export { GlobalStyles, lightTheme, darkTheme }
