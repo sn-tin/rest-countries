@@ -6,7 +6,7 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     background-color: ${({theme}) => theme.secondary};
     padding: 20px;
-    h1, button {
+    h1 {
         color: ${({theme}) => theme.text};
         font-size: clamp(0.9rem, 2.5vw, 1.2rem);
         font-weight: ${fontWeight.extraBold};
@@ -18,6 +18,9 @@ const StyledNav = styled.nav`
     }
 `
 const ModeButton = styled.button`
+    color: ${({theme}) => theme.text};
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    font-weight: ${fontWeight.semiBold};
     background-color: transparent;
     border: none;
 `
