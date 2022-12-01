@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import CountriesCard from "./CountriesCard";
-import { StyledMain } from "./Main.styles"
+import { StyledMain, Searchbar } from "./Main.styles"
 
 const Main = () => {
   const [countries, setCountries] = useState([])
@@ -26,8 +26,11 @@ const formatNumber = (value) => {
 
   return (
     <StyledMain>
-      <div className="d-flex align-items-center sort-data">
-        <input type="text" className="form-control" placeholder="Search for a country..." />
+      <div className="sort-data">
+        <Searchbar className="d-flex align-items-center">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search for a country..." />
+        </Searchbar>
         <div className="dropdown">
           <p>Filter by Region</p>
           <ul className="d-none list-unstyled dropdown-options">
