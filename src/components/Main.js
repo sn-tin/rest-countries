@@ -19,7 +19,7 @@ useEffect(() => {
   getCountries();
 }, [])
 
-const formatPopulation = (value) => {
+const formatNumber = (value) => {
   return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -42,7 +42,7 @@ const formatPopulation = (value) => {
         {
           countries.map((country) => {
             return (
-              <CountriesCard key={country.ccn3} data={country} formatNumber={formatPopulation} />
+              <CountriesCard key={country.ccn3} data={country} formatNumber={formatNumber} />
             )
           })
         }
