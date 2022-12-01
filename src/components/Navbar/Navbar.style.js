@@ -14,7 +14,7 @@ const StyledNav = styled.nav`
     .fa-moon {
         color: ${({theme}) => theme.text};
         transform: rotate(321deg);
-        margin-left: 20px;
+        margin-right: 5px;
     }
 `
 const ModeButton = styled.button`
