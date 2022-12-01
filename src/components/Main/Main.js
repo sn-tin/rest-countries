@@ -27,7 +27,7 @@ const formatNumber = (value) => {
   return (
     <StyledMain>
       <div className="d-flex align-items-center sort-data">
-        <input type="text" placeholder="Search for a country..." />
+        <input type="text" className="form-control" placeholder="Search for a country..." />
         <div className="dropdown">
           <p>Filter by Region</p>
           <ul className="d-none list-unstyled dropdown-options">
