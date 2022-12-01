@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import Main from './components/Main'
-import { GlobalStyles } from './components/styles';
+import { GlobalStyles } from './styles';
 
 const App = () => {
   return (

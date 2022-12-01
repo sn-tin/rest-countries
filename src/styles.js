@@ -28,6 +28,14 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         font-family: 'Nunito Sans', sans-serif;
     }
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+    }
     .App {
         width: 100%;
         max-width: 1800px;
