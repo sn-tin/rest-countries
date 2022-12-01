@@ -28,6 +28,9 @@ const Searchbar = styled.div`
     }
 `
 const Dropdown = styled(Searchbar)`
+    width: 70%;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    padding: 12 20px;
     color: ${({theme}) => theme.text};
     position: relative;
 `
