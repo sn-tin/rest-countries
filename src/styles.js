@@ -1,8 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const lightTheme = {
-    primary: "hsl(0, 0%, 100%)",
-    secondary: "hsl(0, 0%, 98%)",
+    primary: "hsl(0, 0%, 98%)",
+    secondary: "hsl(0, 0%, 100%)",
     text: "hsl(0, 0%, 0%)",
     subText: "hsl(0, 0%, 50%)"
 }
