@@ -14,6 +14,12 @@ const darkTheme = {
     subText: "hsl(0, 0%, 80%)"
 }
 
+const fontWeight = {
+    light: 300,
+    semiBold: 600,
+    extraBold: 800
+}
+
 const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
@@ -39,4 +45,4 @@ const GlobalStyles = createGlobalStyle`
     }
 `
 
-export { GlobalStyles, lightTheme, darkTheme }
+export { GlobalStyles, lightTheme, darkTheme, fontWeight }
