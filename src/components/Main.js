@@ -18,6 +18,11 @@ useEffect(() => {
   };
   getCountries();
 }, [])
+
+const formatPopulation = (value) => {
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
   return (
     <main>
       <div className="d-flex align-items-center sort-data">
@@ -37,7 +42,7 @@ useEffect(() => {
         {
           countries.map((country) => {
             return (
-              <CountriesCard key={country.ccn3} data={country} />
+              <CountriesCard key={country.ccn3} data={country} formatNumber={formatPopulation} />
             )
           })
         }

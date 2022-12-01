@@ -1,5 +1,5 @@
 
-const CountriesCard = ({data}) => {
+const CountriesCard = ({data, formatNumber}) => {
     const { flags, name, population, region, capital } = data;
     return (
         <div className="cols">
@@ -7,7 +7,7 @@ const CountriesCard = ({data}) => {
                 <img src={flags.svg} className="card-img-top" alt="Flags" />
                 <div className="card-body">
                     <h5 className="card-title">{name.common}</h5>
-                    <p className="card-text">Population: <span>{population}</span>
+                    <p className="card-text">Population: <span>{formatNumber(population)}</span>
                     </p>
                     <p className="card-text">Region: <span>{region}</span>
                     </p>

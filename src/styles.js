@@ -1,12 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
 
-// - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
-// - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
-// - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
-// - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
-// - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
-// - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
-
 const lightTheme = {
     primary: "hsl(0, 0%, 100%)",
     secondary: "hsl(0, 0%, 98%)",
@@ -26,7 +19,6 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: 'Nunito Sans', sans-serif;
     }
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
@@ -35,6 +27,9 @@ const GlobalStyles = createGlobalStyle`
     p {
         margin: 0;
         padding: 0;
+    }
+    body {
+        font: 16px 'Nunito Sans', sans-serif;
     }
     .App {
         width: 100%;
