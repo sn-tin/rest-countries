@@ -39,7 +39,6 @@ const GlobalStyles = createGlobalStyle`
     }
     .App {
         width: 100%;
-        max-width: 1800px;
         margin: auto;
     }
 `
