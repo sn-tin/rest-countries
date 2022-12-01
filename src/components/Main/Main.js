@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import CountriesCard from "./CountriesCard";
+import { StyledMain } from "./Main.styles"
 
 const Main = () => {
   const [countries, setCountries] = useState([])
@@ -24,7 +25,7 @@ const formatNumber = (value) => {
 }
 
   return (
-    <main>
+    <StyledMain>
       <div className="d-flex align-items-center sort-data">
         <input type="text" placeholder="Search for a country..." />
         <div className="dropdown">
@@ -47,7 +48,7 @@ const formatNumber = (value) => {
           })
         }
       </div>
-    </main>
+    </StyledMain>
   )
 }
 
