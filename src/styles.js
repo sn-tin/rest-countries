@@ -40,8 +40,6 @@ const GlobalStyles = createGlobalStyle`
     .App {
         width: 100%;
         max-width: 1800px;
-        padding: 0 20px;
-        margin: auto;
     }
 `
 
