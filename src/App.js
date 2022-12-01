@@ -2,6 +2,8 @@ import Navbar from './components/Navbar/Navbar';
 import Main from './components/Main/Main'
 import { GlobalStyles } from './styles';
 import { useState } from 'react';
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./styles";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -10,9 +12,11 @@ const App = () => {
     }
   return (
     <div className="App">
-      <GlobalStyles />
-      <Navbar theme={theme} changeTheme={changeTheme} />
-      <Main />
+      <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <Navbar theme={theme} changeTheme={changeTheme} />
+        <Main />
+      </ThemeProvider>
     </div>
   );
 }
