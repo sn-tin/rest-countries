@@ -34,7 +34,7 @@ const formatNumber = (value) => {
         <Dropdown className="dropdown">
           <div className="d-flex align-items-center justify-content-between">
             <p>Filter by Region</p>
-            <i class="fa-solid fa-chevron-down fa-xs"></i>
+            <i className="fa-solid fa-chevron-down fa-xs"></i>
           </div>
           <DropdownList className="list-unstyled dropdown-options">
             <li>Africa</li>
@@ -45,7 +45,7 @@ const formatNumber = (value) => {
           </DropdownList>
         </Dropdown>
       </div>
-      <div className="row row-cols-lg-4 g-3 g-lg-5">
+      <div className="row row-cols-lg-4 row-cols-md-2 g-3 g-lg-5">
         {
           countries.map((country) => {
             return (
