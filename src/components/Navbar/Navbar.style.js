@@ -11,6 +11,11 @@ const StyledNav = styled.nav`
         font-size: clamp(0.9rem, 2.5vw, 1.2rem);
         font-weight: ${fontWeight.extraBold};
     }
+    .fa-moon {
+        color: ${({theme}) => theme.text};
+        transform: rotate(321deg);
+        margin-left: 20px;
+    }
 `
 const ModeButton = styled.button`
     background-color: transparent;

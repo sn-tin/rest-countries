@@ -14,7 +14,7 @@ const Navbar = () => {
             <StyledNav>
                 <h1>Where in the world?</h1>
                 <ModeButton onClick={changeTheme}>
-                <i class="fa-solid fa-moon"></i> Dark Mode</ModeButton>
+                <i className="fa-solid fa-moon"></i> Dark Mode</ModeButton>
             </StyledNav>
         </ThemeProvider>
     )
