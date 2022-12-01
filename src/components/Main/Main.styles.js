@@ -31,8 +31,23 @@ const Dropdown = styled(Searchbar)`
     width: 70%;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     padding: 12 20px;
+    margin-top: 30px;
     color: ${({theme}) => theme.text};
     position: relative;
 `
+const DropdownList = styled.ul`
+    width: 100%;
+    border-radius: 5px;
+    padding: 12px 20px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    background-color: ${({theme}) => theme.secondary};
+    li {
+        &:not(:last-of-type) {
+            margin-bottom: 8px;
+        }
+    }
+`
 
-export { StyledMain, Searchbar, Dropdown }
+export { StyledMain, Searchbar, Dropdown, DropdownList }
