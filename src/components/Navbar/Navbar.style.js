@@ -16,10 +16,13 @@ const StyledNav = styled.nav`
         transform: rotate(321deg);
         margin-right: 5px;
     }
+    @media screen and (min-width: 990px) {
+        padding: 20px 50px;
+    }
 `
 const ModeButton = styled.button`
     color: ${({theme}) => theme.text};
-    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
     font-weight: ${fontWeight.semiBold};
     background-color: transparent;
     border: none;
