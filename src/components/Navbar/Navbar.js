@@ -1,14 +1,8 @@
-import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../../styles";
 import { StyledNav, ModeButton } from "./Navbar.style";
 
-const Navbar = () => {
-    const [theme, setTheme] = useState("light");
-
-    const changeTheme = () => {
-        theme === "light" ? setTheme("dark") : setTheme("light");
-    }
+const Navbar = ({theme, changeTheme}) => {
     return (
         <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
             <StyledNav>
