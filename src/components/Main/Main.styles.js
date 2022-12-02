@@ -30,6 +30,7 @@ const Searchbar = styled.div`
 `
 const Dropdown = styled(Searchbar)`
     width: 70%;
+    max-width: 14rem;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     padding: 12 20px;
     margin-top: 30px;
@@ -56,7 +57,7 @@ const DropdownList = styled.ul`
     }
 `
 const CardRow = styled.div`
-    margin: 50px auto;
+    margin: 50px 0;
 `
 const CardCol = styled.div`
     width: 20rem;
