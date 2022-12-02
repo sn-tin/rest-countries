@@ -67,7 +67,7 @@ const Card = styled.div`
     background-color: ${({theme}) => theme.secondary};
     margin: auto;
     .card-img-top {
-        height: 10rem;
+        height: 11rem;
         object-fit: cover;
         object-position: center;
     }
