@@ -34,6 +34,11 @@ const Dropdown = styled(Searchbar)`
     margin-top: 30px;
     color: ${({theme}) => theme.text};
     position: relative;
+    @media screen and (min-width: 990px) {
+        flex-direction: row;
+        margin-top: 0;
+        margin-left: auto;
+    }
 `
 const DropdownList = styled.ul`
     width: 100%;
