@@ -4,20 +4,26 @@ const lightTheme = {
     primary: "hsl(0, 0%, 98%)",
     secondary: "hsl(0, 0%, 100%)",
     text: "hsl(0, 0%, 0%)",
-    subText: "hsl(0, 0%, 50%)"
+    subText: "hsl(0, 0%, 50%)",
+    shadow: `0 0 10px hsl(0, 0%, 90%)`,
 }
 
 const darkTheme = {
     primary: "hsl(207, 26%, 17%)",
     secondary: "hsl(209, 23%, 22%)",
     text: "hsl(0, 0%, 100%)",
-    subText: "hsl(0, 0%, 80%)"
+    subText: "hsl(0, 0%, 80%)",
+    shadow: `0 0 10px hsl(207, 26%, 15%)`,
 }
 
 const fontWeight = {
     light: 300,
     semiBold: 600,
     extraBold: 800
+}
+
+const boxShadow = {
+    
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -43,4 +49,4 @@ const GlobalStyles = createGlobalStyle`
     }
 `
 
-export { GlobalStyles, lightTheme, darkTheme, fontWeight }
+export { GlobalStyles, lightTheme, darkTheme, fontWeight, boxShadow }

@@ -11,6 +11,7 @@ const Searchbar = styled.div`
     border-radius: 5px;
     padding: 12px 30px;
     background-color: ${({theme}) => theme.secondary};
+    box-shadow: ${({theme}) => theme.shadow};
     .fa-magnifying-glass {
         color: ${({theme}) => theme.text};
     }
@@ -66,7 +67,9 @@ const CardCol = styled.div`
 const Card = styled.div`
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.secondary};
+    border: none;
     margin: auto;
+    box-shadow:  ${({theme}) => theme.shadow};
     .card-img-top {
         height: 11rem;
         object-fit: cover;
