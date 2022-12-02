@@ -28,7 +28,7 @@ const formatNumber = (value) => {
     <StyledMain>
       <div className="d-flex flex-column flex-lg-row sort-data">
         <Searchbar className="d-flex align-items-center">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search for a country..." />
         </Searchbar>
         <Dropdown className="dropdown">
