@@ -1,9 +1,10 @@
+import { Card, CardCol } from "./Main.styles";
 
 const CountriesCard = ({data, formatNumber}) => {
     const { flags, name, population, region, capital } = data;
     return (
-        <div className="cols">
-            <div className="card">
+        <CardCol className="cols">
+            <Card className="card">
                 <img src={flags.svg} className="card-img-top" alt="Flags" />
                 <div className="card-body">
                     <h5 className="card-title">{name.common}</h5>
@@ -14,8 +15,8 @@ const CountriesCard = ({data, formatNumber}) => {
                     <p className="card-text">Capital: <span>{capital}</span>
                     </p>
                 </div>
-            </div>   
-        </div>
+            </Card>   
+        </CardCol>
     )
 }
 

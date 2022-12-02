@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fontWeight } from "../../styles";
 
 const StyledMain = styled.main`
     padding: 20px;
@@ -54,5 +55,36 @@ const DropdownList = styled.ul`
         }
     }
 `
+const CardRow = styled.div`
+    margin: 50px auto;
+`
+const CardCol = styled.div`
+    width: 20rem;
+    margin-bottom: 5rem;
+`
+const Card = styled.div`
+    color: ${({theme}) => theme.text};
+    background-color: ${({theme}) => theme.secondary};
+    margin: auto;
+    .card-img-top {
+        height: 10rem;
+        object-fit: cover;
+        object-position: center;
+    }
+    .card-body {
+        padding: 35px 20px;
+    }
+    .card-text {
+        font-weight: ${fontWeight.semiBold};
+        margin-bottom: 3px;
+        span {
+            font-weight: ${fontWeight.light};
+        }
+    }
+    .card-title {
+        font-weight: ${fontWeight.extraBold};
+        margin-bottom: 8px;
+    }
+`
 
-export { StyledMain, Searchbar, Dropdown, DropdownList }
+export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, Card }
