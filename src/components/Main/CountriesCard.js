@@ -3,7 +3,7 @@ import { Card, CardCol } from "./Main.styles";
 const CountriesCard = ({data, formatNumber}) => {
     const { flags, name, population, region, capital } = data;
     return (
-        <CardCol className="cols">
+        <CardCol className="cols p-0">
             <Card className="card">
                 <img src={flags.svg} className="card-img-top" alt="Flags" />
                 <div className="card-body">

@@ -62,7 +62,7 @@ justify-content: space-between;
     margin: 50px 0;
 `
 const CardCol = styled.div`
-    width: 20rem;
+    width: 18rem;
     margin-bottom: 5rem;
 `
 const Card = styled.div`
@@ -77,7 +77,7 @@ const Card = styled.div`
         object-position: center;
     }
     .card-body {
-        padding: 35px 20px;
+        padding: 40px 20px;
     }
     .card-text {
         font-weight: ${fontWeight.semiBold};
