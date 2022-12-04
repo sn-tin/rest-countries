@@ -72,7 +72,7 @@ const CardCol = styled.div`
     width: 17rem;
     margin-bottom: 30px;
     margin: auto auto 30px;
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 990px) {
         margin: 0 0 30px;
     }
 `
