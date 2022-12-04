@@ -49,8 +49,9 @@ const Dropdown = styled(Searchbar)`
 const DropdownList = styled.ul`
     width: 100%;
     border-radius: 5px;
-    padding: 12px 20px;
+    padding: 15px 20px;
     position: absolute;
+    top: 3rem;
     left: 0;
     z-index: 1;
     background-color: ${({theme}) => theme.secondary};

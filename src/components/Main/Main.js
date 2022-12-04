@@ -36,7 +36,7 @@ const formatNumber = (value) => {
             <p>Filter by Region</p>
             <i className="fa-solid fa-chevron-down fa-xs"></i>
           </div>
-          <DropdownList className="d-none list-unstyled dropdown-options">
+          <DropdownList className="list-unstyled dropdown-options">
             <li>Africa</li>
             <li>America</li>
             <li>Asia</li>
