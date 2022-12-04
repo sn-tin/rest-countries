@@ -5,7 +5,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     background-color: ${({theme}) => theme.secondary};
-    padding: 20px;
+    padding: 25px 20px;
     box-shadow: ${({theme}) => theme.shadow};
     h1 {
         color: ${({theme}) => theme.text};
@@ -18,7 +18,7 @@ const StyledNav = styled.nav`
         margin-right: 5px;
     }
     @media screen and (min-width: 990px) {
-        padding: 20px 50px;
+        padding: 25px 80px;
     }
 `
 const ModeButton = styled.button`
