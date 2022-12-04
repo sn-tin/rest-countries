@@ -4,6 +4,9 @@ import { fontWeight } from "../../styles";
 const StyledMain = styled.main`
     padding: 20px;
     background-color: ${({theme}) => theme.primary};
+    @media screen and (min-width: 990px) {
+        padding: 50px 80px;
+    }
 `
 const Searchbar = styled.div`
     width: 100%;
@@ -58,12 +61,13 @@ const DropdownList = styled.ul`
     }
 `
 const CardRow = styled.div`
-justify-content: space-between;
-    margin: 50px 0;
+    justify-content: space-between;
+    margin: 50px auto;
+    gap: 40px;
 `
 const CardCol = styled.div`
-    width: 18rem;
-    margin-bottom: 5rem;
+    width: 17rem;
+    margin-bottom: 30px;
 `
 const Card = styled.div`
     color: ${({theme}) => theme.text};

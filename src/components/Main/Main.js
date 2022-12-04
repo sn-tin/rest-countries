@@ -45,7 +45,7 @@ const formatNumber = (value) => {
           </DropdownList>
         </Dropdown>
       </div>
-      <CardRow className="row row-cols-lg-4 row-cols-md-2">
+      <CardRow className="row row-cols-md-2 row-cols-lg-4">
         {
           countries.map((country) => {
             return (
