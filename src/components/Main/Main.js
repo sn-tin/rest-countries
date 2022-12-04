@@ -61,7 +61,11 @@ const Main = () => {
       </div>
       <CardRow className="row row-cols-md-2 row-cols-lg-4">
         {
-          countries.map((country) => {
+          countries.filter(item => {
+            return search.toLowerCase() === ''
+              ? item
+              : item.name.common.toLowerCase().includes(search)
+          }).map((country) => {
             return (
               <CountriesCard key={country.ccn3} data={country} formatNumber={formatNumber} />
             )
