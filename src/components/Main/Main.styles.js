@@ -58,6 +58,7 @@ const DropdownList = styled.ul`
     }
 `
 const CardRow = styled.div`
+justify-content: space-between;
     margin: 50px 0;
 `
 const CardCol = styled.div`
