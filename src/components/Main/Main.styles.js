@@ -63,11 +63,18 @@ const DropdownList = styled.ul`
 const CardRow = styled.div`
     justify-content: space-between;
     margin: 50px auto;
-    gap: 40px;
+    gap: 8px;
+    @media screen and (min-width: 990px) {
+        gap: 40px;
+    }
 `
 const CardCol = styled.div`
     width: 17rem;
     margin-bottom: 30px;
+    margin: auto auto 30px;
+    @media screen and (min-width: 700px) {
+        margin: 0 0 30px;
+    }
 `
 const Card = styled.div`
     color: ${({theme}) => theme.text};
