@@ -5,7 +5,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     background-color: ${({theme}) => theme.secondary};
-    padding: 25px 20px;
+    padding: 30px 20px;
     box-shadow: ${({theme}) => theme.shadow};
     h1 {
         color: ${({theme}) => theme.text};
