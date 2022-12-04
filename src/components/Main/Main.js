@@ -5,9 +5,8 @@ import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
 
 const Main = () => {
-
+  /* Fetch countries API */ 
   const [countries, setCountries] = useState([])
-
   useEffect(() => {
     const getCountries = async () => {
       try {
@@ -20,24 +19,27 @@ const Main = () => {
     };
     getCountries();
   }, [])
-
-const formatNumber = (value) => {
-  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-/* Dropdown State */ 
-const [showDropdown, setShowDropdown] = useState(false);
-
-const dropdownActive = () => {
-  setShowDropdown(!showDropdown)
-}
+  /* Format mumbers with commas */ 
+  const formatNumber = (value) => {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  /* Dropdown */ 
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownActive = () => {
+    setShowDropdown(!showDropdown)
+  }
+  /* Searchbar */
+  const [search, setSearch] = useState("");
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
+  }
 
   return (
     <StyledMain>
       <div className="d-flex flex-column flex-lg-row sort-data">
         <Searchbar className="d-flex align-items-center">
           <i className="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search for a country..." />
+          <input type="text" placeholder="Search for a country..." onChange={handleSearch} />
         </Searchbar>
         <Dropdown className="dropdown" onClick={dropdownActive}>
           <div className="d-flex align-items-center justify-content-between">
