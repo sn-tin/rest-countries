@@ -22,10 +22,6 @@ const fontWeight = {
     extraBold: 800
 }
 
-const boxShadow = {
-    
-}
-
 const GlobalStyles = createGlobalStyle`
     * {
         box-sizing: border-box;
@@ -49,4 +45,4 @@ const GlobalStyles = createGlobalStyle`
     }
 `
 
-export { GlobalStyles, lightTheme, darkTheme, fontWeight, boxShadow }
+export { GlobalStyles, lightTheme, darkTheme, fontWeight }
