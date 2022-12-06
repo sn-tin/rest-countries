@@ -40,6 +40,7 @@ const Dropdown = styled(Searchbar)`
     margin-top: 30px;
     color: ${({theme}) => theme.text};
     position: relative;
+    cursor: pointer;
     @media screen and (min-width: 990px) {
         flex-direction: row;
         margin-top: 0;
@@ -55,6 +56,7 @@ const DropdownList = styled.ul`
     left: 0;
     z-index: 1;
     background-color: ${({theme}) => theme.secondary};
+    cursor: pointer;
     li {
         &:not(:last-of-type) {
             margin-bottom: 8px;
