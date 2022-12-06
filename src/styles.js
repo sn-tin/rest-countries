@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font: 16px 'Nunito Sans', sans-serif;
+        background-color: ${({theme}) => theme.primary};
     }
     .App {
         width: 100%;
