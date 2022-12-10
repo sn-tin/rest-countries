@@ -1,24 +1,8 @@
-import axios from "axios";
 import { useState } from "react";
-import { useEffect } from "react";
 import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
 
-const Main = () => {
-  /* Fetch countries API */ 
-  const [countries, setCountries] = useState([])
-  useEffect(() => {
-    const getCountries = async () => {
-      try {
-        const res = await axios(`https://restcountries.com/v3.1/all`);
-        console.log(res.data);
-        setCountries(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    };
-    getCountries();
-  }, [])
+const Main = ({countries}) => {
   /* Format mumbers with commas */ 
   const formatNumber = (value) => {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -67,7 +51,7 @@ const Main = () => {
               : item.name.common.toLowerCase().includes(search)
           }).map((country) => {
             return (
-              <CountriesCard key={country.ccn3} data={country} formatNumber={formatNumber} />
+                <CountriesCard key={country.ccn3} data={country} formatNumber={formatNumber} />
             )
           })
         }
