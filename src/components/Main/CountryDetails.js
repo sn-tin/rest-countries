@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const CountryDetails = ({countries}) => {
     const [country, setCountry] = useState([]);
     let native = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common;
-    let currency = country.currencies[Object.keys(country.currencies)[0]].name;
+    let currency = country.currencies[Object.keys(country.currencies)[0]].name
     let language = country.languages[Object.keys(country.languages)[0]];
     const { slug } = useParams();
     const name = slug.split("-").join(" ");
