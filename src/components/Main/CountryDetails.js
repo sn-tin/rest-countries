@@ -3,11 +3,10 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 const CountryDetails = ({countries}) => {
-    const [country, setCountry] = useState(null);
-    // const { flags, population, region, subregion, capital, tld, languages } = country;
-    let native = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common
-    let currency = country.currencies[Object.keys(country.currencies)[0]].name
-    // let language = country.languages[Object.keys(country.languages)[0]]
+    const [country, setCountry] = useState([]);
+    let native = country.name.nativeName[Object.keys(country.name.nativeName)[0]].common;
+    let currency = country.currencies[Object.keys(country.currencies)[0]].name;
+    let language = country.languages[Object.keys(country.languages)[0]];
     const { slug } = useParams();
     const name = slug.split("-").join(" ");
 
@@ -26,7 +25,10 @@ const CountryDetails = ({countries}) => {
     return (
         <div className="country-details">
             <Link to='/'>
-                <button>Back</button>
+                <button>
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </button>
             </Link>
             <div className="details">
                 <img src={country.flags.svg} alt={`${name}'s flag`} />
@@ -44,7 +46,7 @@ const CountryDetails = ({countries}) => {
                     <div className="content-2">
                         <p>Top Level Domain: <span>{country.tld[0]}</span></p>
                         <p>Currencies: <span>{currency}</span></p>
-                        {/* <p>Languages: <span>{language}</span></p> */}
+                        <p>Languages: <span>{language}</span></p>
                     </div>
                 </div>
             </div>
