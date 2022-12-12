@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { BackButton, StyledLink } from "./Main.styles";
 
 const CountryDetails = ({ countries }) => {
     const [country, setCountry] = useState(null);
@@ -30,12 +31,12 @@ const CountryDetails = ({ countries }) => {
   
     return (
       <div className="country-details">
-        <Link to="/">
-          <button>
+        <StyledLink to="/">
+          <BackButton>
             <i className="fa-solid fa-arrow-left"></i>
             Back
-          </button>
-        </Link>
+          </BackButton>
+        </StyledLink>
         {country && (
           <div className="details">
             <img src={country?.flags.svg} alt={`${name}'s flag`} />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fontWeight } from "../../styles";
 
@@ -79,6 +80,13 @@ const CardCol = styled.div`
         margin: 0 0 30px;
     }
 `
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+`
 const Card = styled.div`
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.secondary};
@@ -105,5 +113,10 @@ const Card = styled.div`
         margin-bottom: 8px;
     }
 `
+const BackButton = styled(Dropdown)`
+    width: 200px;
+    margin: 0;
+    text-decoration: none;
+`
 
-export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, Card }
+export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, BackButton }

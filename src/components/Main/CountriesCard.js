@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Card, CardCol } from "./Main.styles";
+import { Card, CardCol, StyledLink } from "./Main.styles";
 
 const CountriesCard = ({data, formatNumber}) => {
     const { flags, name, population, region, capital } = data;
@@ -7,7 +6,7 @@ const CountriesCard = ({data, formatNumber}) => {
 
     return (
         <CardCol className="cols p-0">
-            <Link to={`/country/${slug}`}>
+            <StyledLink to={`/country/${slug}`}>
                 <Card className="card">
                     <img src={flags.svg} className="card-img-top" alt="Flags" />
                     <div className="card-body">
@@ -20,7 +19,7 @@ const CountriesCard = ({data, formatNumber}) => {
                         </p>
                     </div>
                 </Card>   
-            </Link>
+            </StyledLink>
         </CardCol>
     )
 }
