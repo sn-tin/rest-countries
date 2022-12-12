@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { BackButton, StyledLink } from "./Main.styles";
+import { StyledButtons, ImageFlag, StyledContent, StyledLink, StyledMain } from "./Main.styles";
 
 const CountryDetails = ({ countries }) => {
     const [country, setCountry] = useState(null);
@@ -23,50 +23,57 @@ const CountryDetails = ({ countries }) => {
       setCountry(foundCountry);
       console.log(foundCountry);
     }, [foundCountry]);
-  
+
     /* Format mumbers with commas */
   
     const formatPopulation = (value) =>
       value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
     return (
-      <div className="country-details">
+      <StyledMain className="country-details">
         <StyledLink to="/">
-          <BackButton>
+          <StyledButtons>
             <i className="fa-solid fa-arrow-left"></i>
             Back
-          </BackButton>
+          </StyledButtons>
         </StyledLink>
         {country && (
-          <div className="details">
-            <img src={country?.flags.svg} alt={`${name}'s flag`} />
-            <div className="content-wrapper">
-              <h1>{name}</h1>
-              <div className="content-1">
-                <p>Native Name: <span>{native}</span></p>
-                <p>Population: <span>{formatPopulation(country.population)}</span></p>
-                <p>Region: <span>{country.region}</span></p>
-                <p>Sub-Region: <span>{country.subregion}</span></p>
-                <p>Capital:
-                  {country.capital?.map((cap) => (
-                    <span key={cap[0]}> {cap}</span>
-                  ))}
-                </p>
+          <div className="d-flex flex-column flex-lg-row align-items-lg-center">
+            <ImageFlag src={country?.flags.svg} alt={`${name}'s flag`} />
+            <StyledContent className="content-wrapper">
+              <h2>{name}</h2>
+              <div className="d-flex flex-column flex-lg-row">
+                <div className="content-1">
+                    <p>Native Name: <span>{native}</span></p>
+                    <p>Population: <span>{formatPopulation(country.population)}</span></p>
+                    <p>Region: <span>{country.region}</span></p>
+                    <p>Sub-Region: <span>{country.subregion}</span></p>
+                    <p>Capital:
+                    {country.capital?.map((cap) => (
+                        <span key={cap[0]}> {cap}</span>
+                    ))}
+                    </p>
+                </div>
+                <div className="content-2">
+                    <p>Top Level Domain: <span>{country.tld[0]}</span></p>
+                    <p>Currencies: <span>{currency}</span></p>
+                    <p>Language: <span>{language}</span></p>
+                </div>
               </div>
-              <div className="content-2">
-                <p>Top Level Domain: <span>{country.tld[0]}</span></p>
-                <p>Currencies: <span>{currency}</span></p>
-                <p>Language: <span>{language}</span></p>
+              <div className="border-countries d-flex flex-column flex-lg-row align-items-lg-center">
+                <p className="me-4">Border Countries:</p>
+                <div>
+                    {country.borders.map(border => (
+                        <StyledButtons className="me-2" key={border}>
+                            {border}
+                        </StyledButtons>
+                    ))}
+                </div>
               </div>
-            </div>
-            <div className="border-countries">
-                {country.borders.map(border => (
-                    <button key={border}>{border}</button>
-                ))}
-            </div>
+            </StyledContent>
           </div>
         )}
-      </div>
+      </StyledMain>
     );
   };
   

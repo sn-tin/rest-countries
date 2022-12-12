@@ -113,10 +113,50 @@ const Card = styled.div`
         margin-bottom: 8px;
     }
 `
-const BackButton = styled(Dropdown)`
-    width: 200px;
-    margin: 0;
-    text-decoration: none;
+const StyledButtons = styled.button`
+    width: 100px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    color: ${({theme}) => theme.text};
+    background-color: ${({theme}) => theme.secondary};
+    margin: 0 0 8px 0;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: ${({theme}) => theme.shadow};
+    i {
+        margin-right: 5px;
+    }
+    @media screen and (min-width: 990px) {
+        margin: 0;
+    }
 `
-
-export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, BackButton }
+const ImageFlag = styled.img`
+    width: 100%;
+    max-width: 35rem;
+    margin: 50px 0;
+`
+const StyledContent = styled.div`
+    color: ${({theme}) => theme.text};
+    h2 {
+        font-weight: ${fontWeight.extraBold};
+        margin: 5px 0;
+    }
+    p {
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        font-weight: ${fontWeight.semiBold};
+        margin: 8px 0;
+        span {
+            font-weight: ${fontWeight.light};
+        }
+    }
+    .content-1, .content-2, .border-countries {
+        margin: 15px 0;
+        &:not(:last-of-type) {
+            margin-right: 50px;
+        }
+    }
+    @media screen and (min-width: 990px) {
+        margin-left: 100px;
+    }
+`
+export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, StyledButtons, ImageFlag, StyledContent}
