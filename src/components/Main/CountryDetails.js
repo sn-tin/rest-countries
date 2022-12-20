@@ -11,10 +11,7 @@ const CountryDetails = ({ countries }) => {
     let currency = country
       ? country.currencies[Object.keys(country.currencies)[0]].name
       : "";
-    let language = country
-      ? country.languages[Object.keys(country.languages)[0]] 
-      : "";
-
+      
     const { slug } = useParams();
     const name = slug.split("-").join(" ");
   
@@ -39,7 +36,7 @@ const CountryDetails = ({ countries }) => {
         </StyledLink>
         {country && (
           <div className="d-flex flex-column flex-lg-row align-items-lg-center">
-            <ImageFlag src={country?.flags.svg} alt={`${name}'s flag`} />
+            <ImageFlag src={country.flags.svg} alt={`${name}'s flag`} />
             <StyledContent className="content-wrapper">
               <h2>{name}</h2>
               <div className="d-flex flex-column flex-lg-row">
@@ -48,22 +45,18 @@ const CountryDetails = ({ countries }) => {
                     <p>Population: <span>{formatPopulation(country.population)}</span></p>
                     <p>Region: <span>{country.region}</span></p>
                     <p>Sub-Region: <span>{country.subregion}</span></p>
-                    <p>Capital:
-                    {country.capital?.map((cap) => (
-                        <span key={cap[0]}> {cap}</span>
-                    ))}
-                    </p>
+                    <p>Capital: <span>{country.capital[0]}</span></p>
                 </div>
                 <div className="content-2">
                     <p>Top Level Domain: <span>{country.tld[0]}</span></p>
                     <p>Currencies: <span>{currency}</span></p>
-                    <p>Language: <span>{language}</span></p>
+                    <p>Language: <span>{Object.values(country.languages).toString()}</span></p>
                 </div>
               </div>
               <div className="border-countries d-flex flex-column flex-lg-row align-items-lg-center">
                 <p className="me-4">Border Countries:</p>
                 <div>
-                    {country.borders.map(border => (
+                    {country.borders?.map(border => (
                         <StyledButtons className="me-2" key={border}>
                             {border}
                         </StyledButtons>

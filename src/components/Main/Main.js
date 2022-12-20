@@ -18,6 +18,14 @@ const Main = ({countries}) => {
     setSearch(event.target.value)
   }
 
+
+  /* Continents */
+  const [dropdownName, setDropdownName] = useState("Filter by Region");
+  const dropdownList = ['Africa', 'America', 'Asia', 'Europe', 'Oceania', 'Show All'];
+  const handleDropdown = (event) => {
+    setDropdownName(event.target.innerText)
+  }
+
   return (
     <StyledMain>
       <div className="d-flex flex-column flex-lg-row sort-data">
@@ -27,17 +35,13 @@ const Main = ({countries}) => {
         </Searchbar>
         <Dropdown className="dropdown" onClick={dropdownActive}>
           <div className="d-flex align-items-center justify-content-between">
-            <p>Filter by Region</p>
+            <p>{dropdownName}</p>
             <i className="fa-solid fa-chevron-down fa-xs"></i>
           </div>
           {
             showDropdown && (
               <DropdownList className="list-unstyled dropdown-options">
-                <li>Africa</li>
-                <li>America</li>
-                <li>Asia</li>
-                <li>Europe</li>
-                <li>Oceania</li>
+                {dropdownList.map(list => <li onClick={handleDropdown}>{list}</li>)}
               </DropdownList>
             )
           }
