@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { cardRowAnimate } from "./animation";
 import { StyledButtons, ImageFlag, StyledContent, StyledLink, StyledMain } from "./Main.styles";
 
 const CountryDetails = ({ countries }) => {
@@ -27,7 +28,7 @@ const CountryDetails = ({ countries }) => {
       value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
     return (
-      <StyledMain className="country-details">
+      <StyledMain variants={cardRowAnimate} initial="start" animate="end" exit="exit" className="country-details">
         <StyledLink to="/">
           <StyledButtons>
             <i className="fa-solid fa-arrow-left"></i>

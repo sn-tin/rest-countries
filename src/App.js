@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import axios from 'axios';
 import CountryDetails from './components/Main/CountryDetails';
+import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
   const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('themeColor')) || "light");
@@ -37,15 +38,17 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
-          <GlobalStyles />
-          <Navbar theme={theme} changeTheme={changeTheme} />
-          <Routes>
-            <Route index path="/" element={<Main countries={countries} />} />
-            <Route path="/country" element={<Main countries={countries} />} />
-            <Route path="/country/:slug" element={<CountryDetails countries={countries} />} />
-          </Routes>
-        </ThemeProvider>
+        <AnimatePresence mode='wait'>
+          <ThemeProvider theme={theme === "light"? lightTheme : darkTheme}>
+            <GlobalStyles />
+            <Navbar theme={theme} changeTheme={changeTheme} />
+            <Routes>
+              <Route index path="/" element={<Main countries={countries} />} />
+              <Route path="/country" element={<Main countries={countries} />} />
+              <Route path="/country/:slug" element={<CountryDetails countries={countries} />} />
+            </Routes>
+          </ThemeProvider>
+        </AnimatePresence>
       </div>
     </BrowserRouter>
   );

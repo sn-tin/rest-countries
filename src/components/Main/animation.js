@@ -44,4 +44,19 @@ const dropdownListAnimate = {
     }
 }
 
-export { hoverAnimate, dropdownAnimate, dropdownListAnimate }
+const cardRowAnimate = {
+    start: {
+        x: "-100vw",
+    },
+    end: {
+        x: 0,
+        transition: {
+            duration: 0.2
+        }
+    },
+    exit: {
+        x: "-100vw"
+    }
+}
+
+export { hoverAnimate, dropdownAnimate, dropdownListAnimate, cardRowAnimate }

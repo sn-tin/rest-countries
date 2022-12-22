@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { dropdownAnimate, dropdownListAnimate } from "./animation";
+import { cardRowAnimate, dropdownAnimate, dropdownListAnimate } from "./animation";
 import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
 import { AnimatePresence, motion } from "framer-motion";
@@ -64,19 +64,21 @@ const Main = ({countries}) => {
           </AnimatePresence>
         </Dropdown>
       </div>
-      <CardRow className="row row-cols-md-2 row-cols-lg-4">
-        {
-          countriesData.filter(item => {
-            return search.toLowerCase() === ''
-              ? item
-              : item.name.common.toLowerCase().includes(search)
-          }).map((country) => {
-            return (
-                <CountriesCard key={country.name.common} data={country} formatNumber={formatNumber} />
-            )
-          })
+        { countriesData && 
+          <CardRow variants={cardRowAnimate} initial="start" animate="end" exit="exit " className="row row-cols-md-2 row-cols-lg-4">
+            {
+              countriesData.filter(item => {
+                return search.toLowerCase() === ''
+                  ? item
+                  : item.name.common.toLowerCase().includes(search)
+              }).map((country) => {
+                return (
+                    <CountriesCard key={country.name.common} data={country} formatNumber={formatNumber} />
+                )
+              })
+            }
+          </CardRow>
         }
-      </CardRow>
     </StyledMain>
   )
 }

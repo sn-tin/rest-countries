@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fontWeight } from "../../styles";
 
-const StyledMain = styled.main`
+const StyledMain = styled(motion.main)`
     padding: 20px;
     background-color: ${({theme}) => theme.primary};
     @media screen and (min-width: 990px) {
@@ -65,7 +65,7 @@ const DropdownList = styled(motion.ul)`
         }
     }
 `
-const CardRow = styled.div`
+const CardRow = styled(motion.div)`
     justify-content: space-between;
     margin: 50px auto;
     gap: 8px;
