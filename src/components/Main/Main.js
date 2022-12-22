@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
 
 const Main = ({countries}) => {
+  /* Countries data */ 
+  const [countriesData, setCountriesData] = useState(countries);
   /* Format mumbers with commas */ 
   const formatNumber = (value) => {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -18,13 +20,24 @@ const Main = ({countries}) => {
     setSearch(event.target.value)
   }
 
-
   /* Continents */
   const [dropdownName, setDropdownName] = useState("Filter by Region");
-  const dropdownList = ['Africa', 'America', 'Asia', 'Europe', 'Oceania', 'Show All'];
+  const dropdownList = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'Show All'];
   const handleDropdown = (event) => {
     setDropdownName(event.target.innerText)
   }
+
+  useEffect(() => {
+    if(search) {
+      setCountriesData(countries)
+    } else {
+      if(dropdownName === "Filter by Region" || dropdownName === "Show All") {
+        setCountriesData(countries)
+      } else {
+        setCountriesData(countries.filter(country => country.region === dropdownName))
+      }
+    }
+  }, [search, countries, dropdownName])
 
   return (
     <StyledMain>
@@ -49,7 +62,7 @@ const Main = ({countries}) => {
       </div>
       <CardRow className="row row-cols-md-2 row-cols-lg-4">
         {
-          countries.filter(item => {
+          countriesData.filter(item => {
             return search.toLowerCase() === ''
               ? item
               : item.name.common.toLowerCase().includes(search)
