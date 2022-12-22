@@ -57,7 +57,7 @@ const Main = ({countries}) => {
               {
                 showDropdown && (
                     <DropdownList variants={dropdownAnimate} initial="start" animate="end" exit="exit" className="list-unstyled dropdown-options">
-                      {dropdownList.map(list => <motion.li variants={dropdownListAnimate} onClick={handleDropdown}>{list}</motion.li>)}
+                      {dropdownList.map(list => <motion.li key={list} variants={dropdownListAnimate} onClick={handleDropdown}>{list}</motion.li>)}
                     </DropdownList>
                 )
               }
