@@ -1,10 +1,7 @@
 # REST Countries API with color theme switcher
+REST countries web app allows you to search for countries and filter the selection of countries by region.
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
-
-## 👋 Welcome! 
-Thanks for checking out this front-end coding challenge solution.
-![Preview](design/desktop-preview.jpg)
 
 ## 📖 Table of contents
   - [Overview](#overview)
