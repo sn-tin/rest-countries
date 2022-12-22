@@ -1,3 +1,4 @@
+import { hoverAnimate } from "./animation";
 import { Card, CardCol, StyledLink } from "./Main.styles";
 
 const CountriesCard = ({data, formatNumber}) => {
@@ -7,7 +8,7 @@ const CountriesCard = ({data, formatNumber}) => {
     return (
         <CardCol className="cols p-0">
             <StyledLink to={`/country/${slug}`}>
-                <Card className="card">
+                <Card variants={hoverAnimate} initial="start" whileHover="end">
                     <img src={flags.svg} className="card-img-top" alt="Flags" />
                     <div className="card-body">
                         <h5 className="card-title">{name.common}</h5>

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fontWeight } from "../../styles";
@@ -87,7 +88,7 @@ const StyledLink = styled(Link)`
         text-decoration: none;
     }
 `
-const Card = styled.div`
+const Card = styled(motion.div)`
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.secondary};
     border: none;
