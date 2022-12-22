@@ -43,7 +43,7 @@ const App = () => {
             <GlobalStyles />
             <Navbar theme={theme} changeTheme={changeTheme} />
             <Routes>
-              <Route index path="/" element={<Main countries={countries} />} />
+              <Route index path="/" element={<Main countries={countries} theme={theme} />} />
               <Route path="/country" element={<Main countries={countries} />} />
               <Route path="/country/:slug" element={<CountryDetails countries={countries} />} />
             </Routes>

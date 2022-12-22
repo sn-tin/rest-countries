@@ -160,4 +160,5 @@ const StyledContent = styled.div`
         margin-left: 100px;
     }
 `
-export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, StyledButtons, ImageFlag, StyledContent}
+
+export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, StyledButtons, ImageFlag, StyledContent }

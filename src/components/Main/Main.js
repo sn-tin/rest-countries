@@ -3,8 +3,9 @@ import { cardRowAnimate, dropdownAnimate, dropdownListAnimate } from "./animatio
 import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
 import { AnimatePresence, motion } from "framer-motion";
+import ScrollToTop from "react-scroll-to-top";
 
-const Main = ({countries}) => {
+const Main = ({countries, theme}) => {
   /* Countries data */ 
   const [countriesData, setCountriesData] = useState(countries);
   /* Format mumbers with commas */ 
@@ -79,6 +80,14 @@ const Main = ({countries}) => {
             }
           </CardRow>
         }
+        <ScrollToTop style={{
+          width: "60px",
+          height: "60px",
+          color: theme === "light" ? "hsl(0, 0%, 0%)" : "hsl(0, 0%, 100%)",
+          backgroundColor: theme === "light" ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)",
+          borderRadius: "100vmax",
+          boxShadow: theme === "light" ? "0 0 10px hsl(0, 0%, 90%)" : "0 0 10px hsl(207, 26%, 15%)"
+        }} smooth />
     </StyledMain>
   )
 }
