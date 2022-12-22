@@ -24,6 +24,7 @@ Users should be able to:
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode
+- Scroll to top
 
 ### Screenshot 📸
 
@@ -47,9 +48,9 @@ npm install
 
 ### Links 🔗
 
-- Frontendmentor URL: 
+- Frontendmentor URL: https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-0_VyiujhMW
 - Solution URL: https://github.com/sn-tin/rest-countries
-- Live Site URL: https://no-context.vercel.app
+- Live Site URL: https://rest-countries-sn-tin.vercel.app/
 
 ## 👩‍💻 Author
 
