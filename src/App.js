@@ -10,10 +10,15 @@ import axios from 'axios';
 import CountryDetails from './components/Main/CountryDetails';
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
-    const changeTheme = () => {
-        theme === "light" ? setTheme("dark") : setTheme("light");
-    }
+  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('themeColor')) || "light");
+  const changeTheme = () => {
+      theme === "light" ? setTheme("dark") : setTheme("light");
+  }
+  /* Save theme to local storage */ 
+  useEffect(() => {
+    localStorage.setItem("themeColor", JSON.stringify(theme))
+  }, [theme])
+
   /* Fetch countries API */ 
   const [countries, setCountries] = useState([])
   useEffect(() => {
