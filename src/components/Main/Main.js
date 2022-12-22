@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { dropdownAnimate, dropdownListAnimate } from "./animation";
 import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
+import { AnimatePresence, motion } from "framer-motion";
 
 const Main = ({countries}) => {
   /* Countries data */ 
@@ -51,13 +53,15 @@ const Main = ({countries}) => {
             <p>{dropdownName}</p>
             <i className="fa-solid fa-chevron-down fa-xs"></i>
           </div>
-          {
-            showDropdown && (
-              <DropdownList className="list-unstyled dropdown-options">
-                {dropdownList.map(list => <li onClick={handleDropdown}>{list}</li>)}
-              </DropdownList>
-            )
-          }
+            <AnimatePresence>
+              {
+                showDropdown && (
+                    <DropdownList variants={dropdownAnimate} initial="start" animate="end" exit="exit" className="list-unstyled dropdown-options">
+                      {dropdownList.map(list => <motion.li variants={dropdownListAnimate} onClick={handleDropdown}>{list}</motion.li>)}
+                    </DropdownList>
+                )
+              }
+          </AnimatePresence>
         </Dropdown>
       </div>
       <CardRow className="row row-cols-md-2 row-cols-lg-4">

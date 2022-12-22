@@ -49,7 +49,7 @@ const Dropdown = styled(Searchbar)`
         margin-left: auto;
     }
 `
-const DropdownList = styled.ul`
+const DropdownList = styled(motion.ul)`
     width: 100%;
     border-radius: 5px;
     padding: 15px 20px;
