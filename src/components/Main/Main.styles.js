@@ -73,7 +73,7 @@ const CardRow = styled(motion.div)`
         gap: 40px;
     }
 `
-const CardCol = styled.div`
+const CardCol = styled(motion.div)`
     width: 17rem;
     margin-bottom: 30px;
     margin: auto auto 30px;
@@ -88,7 +88,7 @@ const StyledLink = styled(Link)`
         text-decoration: none;
     }
 `
-const Card = styled(motion.div)`
+const Card = styled.div`
     color: ${({theme}) => theme.text};
     background-color: ${({theme}) => theme.secondary};
     border: none;

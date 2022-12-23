@@ -4,8 +4,8 @@ const hoverAnimate = {
     },
     end: {
         scale: 1.05,
-        transition: { duration: 0.5 }
-    }
+        transition: { duration: 0.2 }
+    },
 }
 
 const dropdownAnimate = {

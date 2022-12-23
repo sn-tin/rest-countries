@@ -6,9 +6,9 @@ const CountriesCard = ({data, formatNumber}) => {
     const slug = name.common.split(" ").join("-");
 
     return (
-        <CardCol className="cols p-0">
+        <CardCol variants={hoverAnimate} initial="start" whileHover="end" className="cols p-0">
             <StyledLink to={`/country/${slug}`}>
-                <Card variants={hoverAnimate} initial="start" whileHover="end">
+                <Card>
                     <img src={flags.svg} className="card-img-top" alt="Flags" />
                     <div className="card-body">
                         <h5 className="card-title">{name.common}</h5>
