@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { cardRowAnimate } from "./animation";
 import { StyledButtons, ImageFlag, StyledContent, StyledLink, StyledMain } from "./Main.styles";
 
@@ -22,6 +22,7 @@ const CountryDetails = ({ countries }) => {
       console.log(foundCountry);
     }, [foundCountry]);
 
+    const navigate = useNavigate();
     /* Format mumbers with commas */
   
     const formatPopulation = (value) =>
@@ -29,7 +30,7 @@ const CountryDetails = ({ countries }) => {
   
     return (
       <StyledMain variants={cardRowAnimate} initial="start" animate="end" exit="exit" className="country-details">
-        <StyledLink to="/">
+        <StyledLink onClick={() => navigate(-1)}>
           <StyledButtons>
             <i className="fa-solid fa-arrow-left"></i>
             Back
