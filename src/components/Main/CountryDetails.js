@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { cardRowAnimate } from "./animation";
 import { StyledButtons, ImageFlag, StyledContent, StyledLink, StyledMain } from "./Main.styles";
 
@@ -23,11 +23,17 @@ const CountryDetails = ({ countries }) => {
     }, [foundCountry]);
 
     const navigate = useNavigate();
+
     /* Format mumbers with commas */
-  
     const formatPopulation = (value) =>
       value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
+    const findCountryName = (border) => {
+      const countryData = countries.find(country => country.cca3 === border)
+      const foundCountryName = countryData.name.common
+      return foundCountryName
+    }
+
     return (
       <StyledMain variants={cardRowAnimate} initial="start" animate="end" exit="exit" className="country-details">
         <StyledLink onClick={() => navigate(-1)}>
@@ -55,16 +61,21 @@ const CountryDetails = ({ countries }) => {
                     <p>Language: <span>{Object.values(country.languages).toString()}</span></p>
                 </div>
               </div>
-              <div className="border-countries d-flex flex-column flex-lg-row align-items-lg-center">
-                <p className="me-4">Border Countries:</p>
-                <div>
-                    {country.borders?.map(border => (
-                        <StyledButtons className="me-2" key={border}>
-                            {border}
-                        </StyledButtons>
-                    ))}
+              {
+                country.borders &&
+                <div className="border-countries d-flex flex-column flex-lg-row align-items-lg-center">
+                  <p className="me-4">Border Countries:</p>
+                  <div>
+                      {country.borders?.map(border => (
+                        <Link to={`/country/${findCountryName(border)}`}>
+                          <StyledButtons className="me-2" key={border}>
+                              {border}
+                          </StyledButtons>
+                        </Link>
+                      ))}
+                  </div>
                 </div>
-              </div>
+              }
             </StyledContent>
           </div>
         )}
