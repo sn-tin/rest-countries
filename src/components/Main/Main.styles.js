@@ -127,9 +127,6 @@ const StyledButtons = styled.button`
     i {
         margin-right: 5px;
     }
-    @media screen and (min-width: 990px) {
-        margin: 0;
-    }
 `
 const ImageFlag = styled.img`
     width: 100%;
