@@ -68,8 +68,8 @@ const CountryDetails = ({ countries }) => {
                   <div>
                       {country.borders?.map(border => (
                         <Link to={`/country/${findCountryName(border)}`}>
-                          <StyledButtons className="me-2" key={border}>
-                              {border}
+                          <StyledButtons className="me-2 text-nowrap w-auto" key={border}>
+                              {findCountryName(border)}
                           </StyledButtons>
                         </Link>
                       ))}
