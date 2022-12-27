@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { cardRowAnimate, dropdownAnimate, dropdownListAnimate } from "./animation";
 import CountriesCard from "./CountriesCard";
-import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow } from "./Main.styles"
+import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, LoadingText } from "./Main.styles"
 import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "react-scroll-to-top";
 
@@ -42,7 +42,7 @@ const Main = ({countries, theme}) => {
     }
   }, [search, countries, dropdownName])
 
-  return (
+  return Object.keys(countries) ? (
     <StyledMain>
       <div className="d-flex flex-column flex-lg-row sort-data">
         <Searchbar className="d-flex align-items-center">
@@ -89,7 +89,7 @@ const Main = ({countries, theme}) => {
           boxShadow: theme === "light" ? "0 0 10px hsl(0, 0%, 90%)" : "0 0 10px hsl(207, 26%, 15%)"
         }} smooth />
     </StyledMain>
-  )
+  ) : <LoadingText>Loading...</LoadingText>
 }
 
 export default Main;

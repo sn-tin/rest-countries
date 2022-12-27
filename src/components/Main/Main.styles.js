@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fontWeight } from "../../styles";
 
+const LoadingText = styled.h1`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`
 const StyledMain = styled(motion.main)`
     padding: 20px;
     background-color: ${({theme}) => theme.primary};
@@ -158,4 +164,4 @@ const StyledContent = styled.div`
     }
 `
 
-export { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, StyledButtons, ImageFlag, StyledContent }
+export { LoadingText, StyledMain, Searchbar, Dropdown, DropdownList, CardRow, CardCol, StyledLink, Card, StyledButtons, ImageFlag, StyledContent }
