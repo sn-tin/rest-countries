@@ -30,16 +30,21 @@ const Main = ({countries, theme}) => {
     setDropdownName(event.target.innerText)
   }
 
-  useEffect(() => {
-    if(search) {
-      setCountriesData(countries)
-    } else {
-      if(dropdownName === "Filter by Region" || dropdownName === "Show All") {
+  const filteringData = () => {
+    if(search){
+      setCountriesData(countriesData.filter(country => country.name.common.toLowerCase().includes(search)))
+    } else if(dropdownName) {
+      setCountriesData(countries.filter(country => country.region === dropdownName))
+      if(dropdownName === "Filter by Region" || dropdownName === "Show All"){
         setCountriesData(countries)
-      } else {
-        setCountriesData(countries.filter(country => country.region === dropdownName))
       }
+    } else {
+      setCountriesData(countries)
     }
+  }
+
+  useEffect(() => {
+    filteringData()
   }, [search, countries, dropdownName])
 
   return Object.keys(countries) ? (
@@ -68,11 +73,7 @@ const Main = ({countries, theme}) => {
         { countriesData && 
           <CardRow variants={cardRowAnimate} initial="start" animate="end" exit="exit " className="row row-cols-md-2 row-cols-lg-4">
             {
-              countriesData.filter(item => {
-                return search.toLowerCase() === ''
-                  ? item
-                  : item.name.common.toLowerCase().includes(search)
-              }).map((country) => {
+              countriesData.map((country) => {
                 return (
                     <CountriesCard key={country.name.common} data={country} formatNumber={formatNumber} />
                 )
