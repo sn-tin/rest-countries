@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { cardRowAnimate, dropdownAnimate, dropdownListAnimate } from "./animation";
 import CountriesCard from "./CountriesCard";
 import { StyledMain, Searchbar, Dropdown, DropdownList, CardRow, LoadingText } from "./Main.styles"
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import ScrollToTop from "react-scroll-to-top";
 
 const Main = ({countries, theme}) => {
@@ -47,6 +47,20 @@ const Main = ({countries, theme}) => {
     filteringData()
   }, [search, countries, dropdownName])
 
+  // const renderData = () => {
+  //   if(countriesData.includes(search) || search === ''){
+  //     return (
+  //       countriesData.map((country) => {
+  //         return (
+  //             <CountriesCard key={country.name.common} data={country} formatNumber={formatNumber} />
+  //         )
+  //       })
+  //     )
+  //   } else if(countriesData.includes(search) === false) {
+  //     return <p>No "{search}" found in {dropdownName}</p>
+  //   }
+  // }
+
   return Object.keys(countries) ? (
     <StyledMain>
       <div className="d-flex flex-column flex-lg-row sort-data">
@@ -59,7 +73,6 @@ const Main = ({countries, theme}) => {
             <p>{dropdownName}</p>
             <i className="fa-solid fa-chevron-down fa-xs"></i>
           </div>
-            <AnimatePresence>
               {
                 showDropdown && (
                     <DropdownList variants={dropdownAnimate} initial="start" animate="end" exit="exit" className="list-unstyled dropdown-options">
@@ -67,11 +80,10 @@ const Main = ({countries, theme}) => {
                     </DropdownList>
                 )
               }
-          </AnimatePresence>
         </Dropdown>
       </div>
         { countriesData && 
-          <CardRow variants={cardRowAnimate} initial="start" animate="end" exit="exit " className="row row-cols-md-2 row-cols-lg-4">
+          <CardRow variants={cardRowAnimate} initial="start" animate="end" exit="exit" className="row row-cols-md-2 row-cols-lg-4">
             {
               countriesData.map((country) => {
                 return (
@@ -79,6 +91,7 @@ const Main = ({countries, theme}) => {
                 )
               })
             }
+            {/* {renderData()} */}
           </CardRow>
         }
         <ScrollToTop style={{
