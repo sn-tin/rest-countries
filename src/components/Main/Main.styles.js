@@ -75,11 +75,11 @@ const CardRow = styled(motion.div)`
     justify-content: space-between;
     margin: 50px auto;
     gap: 8px;
-    p {
+    /* p {
         color: ${({theme}) => theme.text};
         font-size: clamp(1.2rem, 2.5vw, 1.2rem);
         margin: auto;
-    }
+    } */
     @media screen and (min-width: 990px) {
         gap: 40px;
     }
