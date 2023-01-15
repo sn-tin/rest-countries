@@ -11,7 +11,7 @@ import CountryDetails from './components/Main/CountryDetails';
 import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
-  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('themeColor')) || "light");
+  const [theme, setTheme] = useState(JSON.parse(localStorage.getItem('themeColor')) || "dark");
   const changeTheme = () => {
       theme === "light" ? setTheme("dark") : setTheme("light");
   }
